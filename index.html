@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <style>
+        .card{
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            
+        }
+        #list{
+            display:flex;
+            justify-content: space-around;
+           
+        }
+        .image{
+            height:64px;
+            width:64px;
+        }
+    </style>
+</head>
+<body>
+    <div id="list"></div>
+</body>
+</html>
+<script>
+    const _list=[{title:"Top Offers",
+                 img:"1.png"},
+    {
+        title:"Grocery",
+        img:"image/2.png",
+    },
+    {
+        title:"Mobile",
+        img:"image/3.png",
+    },
+    {   
+        title:"Fashion",
+        img:"image/4.png", 
+
+    },
+    {
+        title:"Electronic",
+        img:"image/5.png",
+    },
+    {
+        title:"Home",
+        img:"image/6.jpg",
+    },
+    {
+        title:"Appliances",
+        img:"image/7.png",
+    },
+    {
+        title:"Travel",
+        img:"image/8.png",
+    },
+    {
+        title:"Beauty,Toys & More",
+        img:"image/9.png",
+    },
+    ];
+    const listContainer =document.getElementById("list");
+    
+    function create(element){
+        const lt = document.createElement("div")
+        lt.innerHTML=`<div class="card">
+        <img class="image" src=${element.img} />
+        <p>${element.title}</p>
+        </div>`;
+        return lt;
+    }
+
+    
+    for(let i=0;i<_list.length;i++){
+        currentElement =_list[i];
+
+        const newElement= create(currentElement);
+        listContainer.appendChild(newElement);
+    }
+
+</script>
